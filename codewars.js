@@ -18,7 +18,7 @@ function DNAStrand(dna){
   return newarr
 }
 
-
+//sasa
 // return the highest and the lowest number in a string, with space seperated numbers
 function highAndLow(numbers) {
   numbers = numbers.split(" ");
