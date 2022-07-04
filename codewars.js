@@ -38,4 +38,22 @@ function moveZeros(arr) {
     return arr.filter(function(x) {return x !== 0}).concat(arr.filter(function(x) {return x === 0;}));
   }
 
+  function moveZeroToEnd(input) {
+
+    var notZero = []
+    var zero = []
+  
+    for(var i = 0 ; i < input.length ; i++) {
+      if(input[i] == 0) { 
+        zero.push(0)
+      } else {
+        notZero.push(input[i])
+      }
+    }
+  
+    return notZero.concat(zero)
+  }
+
+  console.log(moveZeroToEnd([false,1,0,1,2,0,1,3,"a"]));
+
   
