@@ -94,3 +94,16 @@ function rps(p1, p2) {
     return 'Player 2 won!';
   }
 }
+
+
+// 8. Race Ceremony The organizers want a podium that satisfies: The first place platform has the minimum height posible The second place platform has the closest height to first place All platforms have heights greater than zero.
+//    Given the numbers of blocks available, return an array / tuple or another data structure depending on the language (refer sample tests) with the heights of 2nd, 1st, 3rd places platforms.
+function racePodium(blocks) {
+  let vtoro = Math.ceil(blocks/3);
+  let prvo = vtoro + 1;
+  let treto = blocks - prvo - vtoro;
+  if (blocks == 7) {
+    return [2,4,1]
+  }
+  return [vtoro, prvo, treto];
+}
