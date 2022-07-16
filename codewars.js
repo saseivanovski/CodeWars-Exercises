@@ -1,4 +1,4 @@
-// 1. return the counterpart of DNA for T --> A , C --> G and vise versa
+// 1. Return the counterpart of DNA for T --> A , C --> G and vise versa
 function DNAStrand(dna) {
   let arr = dna.split("");
   console.log(arr);
@@ -19,7 +19,7 @@ function DNAStrand(dna) {
 }
 
 
-// 2. return the highest and the lowest number in a string, with space seperated numbers
+// 2. Return the highest and the lowest number in a string, with space seperated numbers
 function highAndLow(numbers) {
   numbers = numbers.split(" ");
   return Math.max(...numbers) + " " + Math.min(...numbers);
@@ -27,7 +27,7 @@ function highAndLow(numbers) {
 
 
 // 3. Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
-//(In this case, all triangles must have surface greater than 0 to be accepted).
+//    (In this case, all triangles must have surface greater than 0 to be accepted).
 function isTriangle(a, b, c) {
   return (a + b > c) && (a + c > b) && (b + c > a);
 }
@@ -37,7 +37,7 @@ function isTriangle(a, b, c) {
 function moveZeros(arr) {
   return arr.filter(function (x) { return x !== 0 }).concat(arr.filter(function (x) { return x === 0; }));
 }
-//OR like this
+//    OR like this
 function moveZeros(arr) {
   var notZero = [];
   var zero = [];
@@ -66,8 +66,8 @@ function correctTail(body, tail) {
 
 
 // 6. You are given two sorted arrays that both only contain integers. Your task is to find a way to merge them into a single one, sorted in asc order. Complete the function mergeArrays(arr1, arr2), where arr1 and arr2 are the original sorted arrays.
-//You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
-//Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
+//    You don't need to worry about validation, since arr1 and arr2 must be arrays with 0 or more Integers. If both arr1 and arr2 are empty, then just return an empty array.
+//    Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
 function mergeArrays(arr1, arr2) {
   let arr = arr1.concat(arr2).sort((a, b) => a - b);
 
@@ -106,4 +106,28 @@ function racePodium(blocks) {
     return [2,4,1]
   }
   return [vtoro, prvo, treto];
+}
+
+
+// 9. Rectangle into Squares - cut a given "true" rectangle into squares ("true" rectangle meaning that the two dimensions are different). You will be given two dimensions a positive integer length a positive integer width
+//    You will return a collection or a string with the size of each of the squares. When the initial parameters are so that lng == wdth, the solution [lng] would be the most obvious but not in the spirit of this kata so, in that case, return null
+function sqInRect(lng, wdth){
+  var result = [];
+  
+  if (lng == wdth) {
+    return null;
+    }
+  
+   while (lng > 0 && wdth > 0) {
+      if (lng < wdth) {
+          wdth -= lng
+          result.push(lng)
+          } else {
+            lng -= wdth
+            result.push(wdth)
+          }
+    }
+    
+    return result;
+
 }
