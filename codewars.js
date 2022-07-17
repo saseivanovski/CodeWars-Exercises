@@ -127,7 +127,32 @@ function sqInRect(lng, wdth){
             result.push(wdth)
           }
     }
-    
     return result;
+}
 
+
+// 10. Write an algorithm that will identify valid IPv4 addresses in dot-decimal format. IPs should be considered valid if they consist of four octets, with values between 0 and 255, inclusive.
+//     Leading zeros (e.g. 01.02.03.04) are considered invalid. Inputs are guaranteed to be a single string
+function isValidIP(str) {
+  let elementi = str.split("."); //split string
+
+  if (elementi.length !== 4) { //if elements are not 4 in number
+    return false;
+  }
+
+  for (let i = 0; i < 4; i++) {
+    let x = elementi[i]; //making var x to be element in the array
+
+    if (!isIpNumber(x)) { //if this function is not true
+      return false;
+    }
+  }
+  return true;
+}
+
+function isIpNumber(x) {
+  if (String(Number(x)) !== x) { //if x has something funky like spaces, leading 0's, ... (transform x into number than in string than we compare x not to be equal with x)
+    return false;
+  } 
+  return (Number(x) >= 0 && Number(x) <= 255) //check if number is between 0 and 255
 }
