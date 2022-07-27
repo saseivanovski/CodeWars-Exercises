@@ -156,3 +156,18 @@ function isIpNumber(x) {
   } 
   return (Number(x) >= 0 && Number(x) <= 255) //check if number is between 0 and 255
 }
+
+
+// 11. Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+function solution(str){
+  let x = 0;
+  let y = [];
+ if (str.length % 2 !== 0) {
+   str = str + "_"
+ }
+ while (i < str.length) {
+   y.push(str[x] + str [x+1]);
+   x = x + 2
+ }
+ return y
+}
