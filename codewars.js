@@ -41,7 +41,6 @@ function moveZeros(arr) {
 function moveZeros(arr) {
   var notZero = [];
   var zero = [];
-
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] == 0) {
       zero.push(0);
@@ -56,7 +55,6 @@ function moveZeros(arr) {
 // 5. Second argument (tail), is the same as the last letter of the first argument (body). If the tail is right return true, else return false. The arguments will always be strings, and normal letters.
 function correctTail(body, tail) {
   let sub = body.substr(body.length - (tail.length));
-
   if (sub == tail) {
     return true;
   } else {
@@ -70,7 +68,6 @@ function correctTail(body, tail) {
 //    Note: arr1 and arr2 may be sorted in different orders. Also arr1 and arr2 may have same integers. Remove duplicated in the returned result.
 function mergeArrays(arr1, arr2) {
   let arr = arr1.concat(arr2).sort((a, b) => a - b);
-
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === arr[i + 1]) {
       arr.splice(i, 1);
@@ -113,11 +110,9 @@ function racePodium(blocks) {
 //    You will return a collection or a string with the size of each of the squares. When the initial parameters are so that lng == wdth, the solution [lng] would be the most obvious but not in the spirit of this kata so, in that case, return null
 function sqInRect(lng, wdth){
   var result = [];
-  
   if (lng == wdth) {
     return null;
     }
-  
    while (lng > 0 && wdth > 0) {
       if (lng < wdth) {
           wdth -= lng
@@ -135,14 +130,11 @@ function sqInRect(lng, wdth){
 //     Leading zeros (e.g. 01.02.03.04) are considered invalid. Inputs are guaranteed to be a single string
 function isValidIP(str) {
   let elementi = str.split("."); //split string
-
   if (elementi.length !== 4) { //if elements are not 4 in number
     return false;
   }
-
   for (let i = 0; i < 4; i++) {
     let x = elementi[i]; //making var x to be element in the array
-
     if (!isIpNumber(x)) { //if this function is not true
       return false;
     }
@@ -170,4 +162,16 @@ function solution(str){
    x = x + 2
  }
  return y
+}
+
+
+// 12. Create a function with two arguments that will return an array of the first (n) multiples of (x).
+//     Assume both the given number and the number of times to count will be positive numbers greater than 0.
+//     Return the results as an array
+function countBy(x, n) {
+  var z = [];
+  for (i = 1; i <= n; i++) {
+      z.push(x * i);
+  }
+  return z;
 }
