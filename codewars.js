@@ -150,7 +150,8 @@ function isIpNumber(x) {
 }
 
 
-// 11. Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+// 11. Complete the solution so that it splits the string into pairs of two characters.
+//     If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
 function solution(str){
   let x = 0;
   let y = [];
@@ -174,4 +175,14 @@ function countBy(x, n) {
       z.push(x * i);
   }
   return z;
+}
+
+
+// 13. You are given a number and have to make it negative. But maybe the number is already negative?
+function makeNegative(num) {
+  if (num > 0) {
+    return (-num);
+  }else{
+    return (num);
+  }
 }
