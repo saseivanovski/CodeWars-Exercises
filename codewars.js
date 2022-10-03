@@ -3,7 +3,7 @@ function DNAStrand(dna) {
   let arr = dna.split("");
   console.log(arr);
   let newarr = [];
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] == "A") {
       newarr.push("T");
     } else if (arr[i] == "T") {
@@ -44,9 +44,9 @@ function moveZeros(arr) {
 }
 //    OR like this
 function moveZeros(arr) {
-  var notZero = [];
-  var zero = [];
-  for (var i = 0; i < arr.length; i++) {
+  let notZero = [];
+  let zero = [];
+  for (let i = 0; i < arr.length; i++) {
     if (arr[i] == 0) {
       zero.push(0);
     } else {
@@ -109,7 +109,7 @@ function racePodium(blocks) {
 // 9. Rectangle into Squares - cut a given "true" rectangle into squares ("true" rectangle meaning that the two dimensions are different). You will be given two dimensions a positive integer length a positive integer width
 //    You will return a collection or a string with the size of each of the squares. When the initial parameters are so that lng == wdth, the solution [lng] would be the most obvious but not in the spirit of this kata so, in that case, return null
 function sqInRect(lng, wdth) {
-  var result = [];
+  let result = [];
   if (lng == wdth) {
     return null;
   }
@@ -170,8 +170,8 @@ function solution(str) {
 //     Assume both the given number and the number of times to count will be positive numbers greater than 0.
 //     Return the results as an array
 function countBy(x, n) {
-  var z = [];
-  for (i = 1; i <= n; i++) {
+  let z = [];
+  for (let i = 1; i <= n; i++) {
     z.push(x * i);
   }
   return z;
