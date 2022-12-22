@@ -97,13 +97,13 @@ function rps(p1, p2) {
 // 8. Race Ceremony The organizers want a podium that satisfies: The first place platform has the minimum height posible The second place platform has the closest height to first place All platforms have heights greater than zero.
 //    Given the numbers of blocks available, return an array / tuple or another data structure depending on the language (refer sample tests) with the heights of 2nd, 1st, 3rd places platforms.
 function racePodium(blocks) {
-  let vtoro = Math.ceil(blocks / 3);
-  let prvo = vtoro + 1;
-  let treto = blocks - prvo - vtoro;
+  let second = Math.ceil(blocks / 3);
+  let first = second + 1;
+  let third = blocks - first - second;
   if (blocks == 7) {
     return [2, 4, 1];
   }
-  return [vtoro, prvo, treto];
+  return [second, first, third];
 }
 
 // 9. Rectangle into Squares - cut a given "true" rectangle into squares ("true" rectangle meaning that the two dimensions are different). You will be given two dimensions a positive integer length a positive integer width
@@ -199,3 +199,46 @@ function median(array) {
   }
 }
 console.log(median([33, 99, 100, 30, 29, 50]));
+
+// 15. Given two Arrays in which values are the power of each soldier, return true if you survive the attack or false if you perish.
+//     - Each soldier attacks the opposing soldier in the same index of the array. The survivor is the number with the highest value.
+//     - If the value is the same they both perish
+//     - If one of the values is empty (different array lengths) the non-empty value soldier survives.
+//     - To survive the defending side must have more survivors than the attacking side.
+//     - In case there are the same number of survivors in both sides, the winner is the team with the highest initial attack power. If the total attack power of both sides is the same return true.
+//     - The initial attack power is the sum of all the values in each array.
+function hasSurvived(attackers, defenders) {
+  let a = [];
+  let d = [];
+
+  let sumA = 0;
+  let sumD = 0;
+
+  for (let i = 0; i < attackers.length || i < defenders.length; i++) {
+    sumA = sumA + attackers[i];
+    if (attackers[i] > defenders[i] || defenders[i] == undefined) {
+      a.push(1);
+    }
+  }
+
+  for (let i = 0; i < defenders.length || i < attackers.length; i++) {
+    sumD = sumD + defenders[i];
+    if (attackers[i] < defenders[i] || attackers[i] == undefined) {
+      d.push(1);
+    }
+  }
+
+  if (a.length == d.length) {
+    if (sumA > sumD) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  if (d.length > a.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
