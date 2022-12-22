@@ -216,19 +216,19 @@ function hasSurvived(attackers, defenders) {
 
   for (let i = 0; i < attackers.length || i < defenders.length; i++) {
     sumA = sumA + attackers[i];
-    if (attackers[i] > defenders[i] || defenders[i] == undefined) {
+    if (attackers[i] > defenders[i] || defenders[i] === undefined) {
       a.push(1);
     }
   }
 
   for (let i = 0; i < defenders.length || i < attackers.length; i++) {
     sumD = sumD + defenders[i];
-    if (attackers[i] < defenders[i] || attackers[i] == undefined) {
+    if (attackers[i] < defenders[i] || attackers[i] === undefined) {
       d.push(1);
     }
   }
 
-  if (a.length == d.length) {
+  if (a.length === d.length) {
     if (sumA > sumD) {
       return false;
     } else {
